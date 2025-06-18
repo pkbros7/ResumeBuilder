@@ -4,7 +4,7 @@ const UserDetails = {
   middleName: String,
   lastName: String,
   email: String,
-  phone: String,
+  phone: Number,
   professionalSummary: String,
   profile: String,
   DOB: String,
