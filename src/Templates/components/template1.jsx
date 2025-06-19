@@ -12,13 +12,15 @@ const Template1 = () => {
   useEffect(() => {
     const file = basicDetails?.profile;
 
-    const imageReader = new FileReader();
+    if (file) {
+      const imageReader = new FileReader();
 
-    imageReader.onloadend = () => {
-      setProfile(imageReader.result);
-    };
+      imageReader.onloadend = () => {
+        setProfile(imageReader.result);
+      };
 
-    imageReader.readAsDataURL(file);
+      imageReader.readAsDataURL(file);
+    }
   }, [basicDetails?.profile]);
 
   return (
