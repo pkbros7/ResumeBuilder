@@ -11,8 +11,30 @@ const EduTitles = [
 ];
 const EducationDetails = () => {
   const [educationLevel, setEducationLevel] = useState([
-    { id: new Date().getTime() },
+    {
+      id: new Date().getTime(),
+      tyep: "",
+      board: "",
+      institution: "",
+      hallticket: "",
+      startDate: "",
+      endDate: "",
+      yearOfPass: "",
+      grade: "",
+      city: "",
+      stream: "",
+      desc: "",
+    },
   ]);
+
+  const handleAddValues = (index, name, value) => {
+    let updateValue = [...educationLevel];
+
+    updateValue[index][name] = value;
+
+    setEducationLevel(updateValue);
+  };
+  console.log(educationLevel);
 
   return (
     <div className={eduStyles.container}>
@@ -50,6 +72,9 @@ const EducationDetails = () => {
                       <input
                         name="type"
                         placeholder="Enter Your Education Type"
+                        onChange={(e) =>
+                          handleAddValues(index, "type", e.target.value)
+                        }
                       />
                       <input
                         name="type"
